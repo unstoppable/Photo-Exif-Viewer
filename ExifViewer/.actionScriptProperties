@@ -24,7 +24,7 @@
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
   <buildTargets>
     <buildTarget buildTargetName="default">
-      <airSettings airCertificatePath="I:/repos/as3 projects/ExifViewer/release.p12" airTimestamp="false" anePathSet="true" version="1">
+      <airSettings airCertificatePath="release.p12" airTimestamp="false" anePathSet="true" version="1">
         <airExcludes/>
         <anePaths/>
       </airSettings>
