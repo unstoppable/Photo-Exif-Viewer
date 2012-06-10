@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml">
+	<mx:Script>
+		<![CDATA[
+			protected function getName(data:Object):String{
+				var i:IFDName = IFDName.TAG_DIC[data.tag];
+				return i.cn;
+			}
+		]]>
+	</mx:Script>
+	<mx:Label text="{getName(data)}" paddingLeft="5" />
+</mx:Canvas>

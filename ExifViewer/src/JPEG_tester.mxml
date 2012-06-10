@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   creationComplete="windowedapplication1_creationCompleteHandler(event)">
+	<fx:Script>
+		<![CDATA[
+			import fox.photo.ExifExtractor;
+			import fox.photo.exif.Exif;
+			import fox.photo.exif.ifd.*;
+			import fox.photo.jpeg.JpegTag;
+			
+			import mx.events.FlexEvent;
+			
+			protected function windowedapplication1_creationCompleteHandler(event:FlexEvent):void
+			{
+				var data:ByteArray=readImageData();
+				var exif:Exif= ExifExtractor.readExif(data);
+			}
+			
+			public function readImageData():ByteArray{
+				var data:ByteArray=new ByteArray();
+				var file:File = File.applicationDirectory.resolvePath("0210.jpg");
+				file = File.applicationDirectory.resolvePath("IMG_1454.JPG");
+				var stream:FileStream = new FileStream();
+				stream.open(file,FileMode.READ);
+				stream.readBytes(data);
+				stream.close();
+				return data;
+			}
+			
+			
+			
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:Button id="cc" x="200" y="200" label="sdfa"/>
+</s:WindowedApplication>
